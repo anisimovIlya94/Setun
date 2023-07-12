@@ -2,9 +2,10 @@ import webpack from 'webpack';
 import { buildResolvers } from './buildResolvers';
 import { buildPlugins } from './buildPlugins';
 import { buildOptions } from './types/config';
+import { buildDevServer } from './buildDevServer';
 
 export function buildWebpackConfig(options: buildOptions): webpack.Configuration {
-    const {mode, paths} = options
+    const {mode, paths, isDev, port} = options
     return {
         mode: mode,
         entry: paths.entry,
@@ -23,6 +24,8 @@ export function buildWebpackConfig(options: buildOptions): webpack.Configuration
                 },
             ],
         },
-        resolve: buildResolvers()
+        resolve: buildResolvers(),
+        devtool: isDev ? 'inline-source-map' : undefined,
+        devServer: isDev? buildDevServer(options): undefined
     }
 }
