@@ -3,6 +3,7 @@ import { buildResolvers } from './buildResolvers';
 import { buildPlugins } from './buildPlugins';
 import { buildOptions } from './types/config';
 import { buildDevServer } from './buildDevServer';
+import { buildLoaders } from './buildLoaders';
 
 export function buildWebpackConfig(options: buildOptions): webpack.Configuration {
     const {mode, paths, isDev, port} = options
@@ -16,13 +17,7 @@ export function buildWebpackConfig(options: buildOptions): webpack.Configuration
         },
         plugins: buildPlugins(options),
         module: {
-            rules: [
-                {
-                    test: /\.tsx?$/,
-                    use: 'ts-loader',
-                    exclude: /node_modules/,
-                },
-            ],
+            rules: buildLoaders()
         },
         resolve: buildResolvers(),
         devtool: isDev ? 'inline-source-map' : undefined,
