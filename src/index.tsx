@@ -1,5 +1,5 @@
 import { render } from "react-dom";
-import { Counter } from "./components/counter";
+import { App } from "./components/App";
 
 const rootNode = document.getElementById('root');
-render(<Counter/>, rootNode);
+render(<App/>, rootNode);
