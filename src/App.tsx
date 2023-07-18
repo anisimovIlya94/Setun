@@ -4,13 +4,13 @@ import { Suspense, useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { MainPageAsync } from "./pages/MainPage/MainPage.async"
 import { AboutPageAsync } from "./pages/AboutPage/AboutPage.async"
-import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from "./theme/themeContext"
 import { useTheme } from "./theme/useTheme"
+import { classNames } from "./helpers/classnames"
 
 export const App = () => {
     const {theme, toggleTheme} = useTheme()
     return (
-        <div className={`app ${theme}`}>
+        <div className={classNames("app", {}, [theme])}>
             <button onClick={toggleTheme}>Toggle</button>
             <Link to="/">Main</Link>
             <Link to="/about">About</Link>
