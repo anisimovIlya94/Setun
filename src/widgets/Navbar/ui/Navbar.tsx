@@ -13,7 +13,7 @@ export function Navbar(props: PropsWithChildren<NavbarProps>) {
 
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
-            <ThemeSwitcher/>
+            
             <div className={cls.links}>
                 <AppLink className={cls.mainLink} to="/">Main</AppLink>
                 <AppLink to="/about">About</AppLink>
