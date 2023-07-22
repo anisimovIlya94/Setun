@@ -4,20 +4,28 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { AppRouter } from "./providers/router";
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
+import "shared/config/i18n/i18n"
+import { Suspense } from "react";
+import { useTranslation } from "react-i18next";
+
+// const Component = () => {
+  
+// }
 
 export const App = () => {
   const { theme } = useTheme();
   return (
     <div className={classNames("app", {}, [theme])}>
-      <Navbar />
-      <div className="page-wrapper">
-        <Sidebar />
-        <div className="page-content">
-          <AppRouter />
+      <Suspense fallback="">
+        <Navbar />
+        {/* <Component/> */}
+        <div className="page-wrapper">
+          <Sidebar />
+          <div className="page-content">
+            <AppRouter />
+          </div>
         </div>
-        
-      </div>
-      
+      </Suspense>
     </div>
   );
 };

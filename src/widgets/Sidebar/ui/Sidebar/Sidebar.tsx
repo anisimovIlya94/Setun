@@ -4,6 +4,7 @@ import cls from './Sidebar.module.scss';
 import { useState, type PropsWithChildren } from 'react';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
 import { LOCAL_STORAGE_COLLAPSE_KEY } from 'shared/lib/consts/localStorage';
+import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
 
 interface SidebarProps {
  className?: string;
@@ -28,6 +29,9 @@ export function Sidebar(props: PropsWithChildren<SidebarProps>) {
          <button onClick={collapse}>Collapse</button>
          <div className={cls.switchers}>
             <ThemeSwitcher/>
+            {/* <div> */}
+            <LangSwitcher/>
+            {/* </div> */}
          </div>
     </div>
  );
