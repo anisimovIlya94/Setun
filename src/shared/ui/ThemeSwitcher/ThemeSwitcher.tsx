@@ -18,7 +18,7 @@ export function ThemeSwitcher(props: PropsWithChildren<ThemeSwitcherProps>) {
 
 	return (
 		<Button onClick={toggleTheme} className={classNames(cls.ThemeSwitcher, {}, [className])}>
-			{theme === Theme.DARK ? <ToggleOn className={cls.off} /> : <ToggleOff className={cls.off}/>}
+			{theme === Theme.DARK ? <ToggleOn className={cls.toggle} /> : <ToggleOff className={cls.toggle}/>}
 		</Button>
 	)
 }

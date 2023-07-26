@@ -1,17 +1,15 @@
-:root{
-    --font-family-main: 'Poppins', sans-serif;
-
+:root {
+    --font-family-main: 'Comfortaa', cursive;
     --font-size-m: 16px;
     --font-line-m: 24px;
-    --font-m: var(--font-size-m)/ var(--font-line-m) var(--font-family-main);
-
+    --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
     --font-size-l: 16px;
     --font-line-l: 24px;
-    --font-l: var(--font-size-l)/ var(--font-line-l) var(--font-family-main);
+    --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
 
-    //Размеры
+    // Размеры
 
     --navbar-height: 80px;
     --sidebar-width: 300px;
-    --sidebar-width-collapsed: 100px
+    --sidebar-width-collapsed: 100px;
 }

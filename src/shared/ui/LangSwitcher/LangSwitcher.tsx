@@ -15,7 +15,7 @@ export function LangSwitcher(props: PropsWithChildren<LangSwitcherProps>) {
 		i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru")
 	}
 	return (
-		<div className={classNames(className, {} , [])}>
+		<div className={classNames("", {} , [className])}>
 			<Button onClick={toggle}>{t("Язык")}</Button>
 		</div>
 	)
