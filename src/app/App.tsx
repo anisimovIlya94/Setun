@@ -6,12 +6,13 @@ import { Navbar } from "widgets/Navbar"
 import { Sidebar } from "widgets/Sidebar"
 import "shared/config/i18n/i18n"
 import { Suspense } from "react"
+import { PageLoader } from "widgets/PageLoader/ui/PageLoader"
 
 export const App = () => {
 	const { theme } = useTheme()
 	return (
 		<div className={classNames("app", {}, [theme])}>
-			<Suspense fallback="">
+			<Suspense fallback={""}>
 				<Navbar />
 				<div className="page-wrapper">
 					<Sidebar />
