@@ -52,11 +52,20 @@ module.exports = {
 		"@typescript-eslint/no-unused-vars": "warn",
 		"react/react-in-jsx-scope": "off",
 		"react/no-deprecated": "off",
-		"i18next/no-literal-string": ["warn", {markupOnly: true, ignoreAttribute: ["to", "fallback"]}]
+		"i18next/no-literal-string": ["warn", { markupOnly: true, ignoreAttribute: ["to", "fallback", "data-testid"] }],
+		"no-dupe-keys": "off"
 	},
 	settings: {
 		react: {
 			version: "detect",
 		},
 	},
+	overrides: [
+		{
+			files: ["**/src/**/*.test.{ts,tsx}"],
+			rules: {
+				"i18next/no-literal-string": "off"
+			}
+		}
+	]
 }

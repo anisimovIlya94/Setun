@@ -3,6 +3,8 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from "path"
+
 export default {
 	// All imported modules in your tests should be mocked automatically
 	// automock: false,
@@ -39,9 +41,7 @@ export default {
 	// ],
 
 	// An array of directory names to be searched recursively up from the requiring module's location
-	moduleDirectories: [
-		"node_modules"
-	],
+	moduleDirectories: ["node_modules", "src"],
   
 	preset: "ts-jest",
 
@@ -58,10 +58,21 @@ export default {
 	// The root directory that Jest should scan for tests and modules within
 	rootDir: "../../",
 
+	modulePaths: [
+		"<rootDir>src"
+	],
+
+	setupFilesAfterEnv: ["<rootDir>config/jest/setupTests.ts"],
+
 	// The glob patterns Jest uses to detect test files
 	testMatch: [
 		"<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"
 	],
+
+	moduleNameMapper: {
+		"\\.s?css$": "identity-obj-proxy",
+		"\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx")
+	},
 
 	// A list of reporter names that Jest uses when writing coverage reports
 	// coverageReporters: [
