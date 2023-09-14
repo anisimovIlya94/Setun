@@ -1,5 +1,5 @@
-import MiniCssExtractPlugin from "mini-css-extract-plugin"
 import { buildOptions } from "./types/config"
+import { buildScssLoader } from "../loaders/buildScssLoader/buildScssLoader"
 
 export function buildLoaders({ isDev }: buildOptions) {
 	const svgrLoader = {
@@ -15,22 +15,7 @@ export function buildLoaders({ isDev }: buildOptions) {
 			},
 		],
 	}
-	const scssLoaders = {
-		test: /\.s[ac]ss$/i,
-		use: [
-			isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-			{
-				loader: "css-loader",
-				options: {
-					modules: {
-						auto: (resourcePath: string) => Boolean(resourcePath.includes(".module.")),
-						localIdentName: isDev ? "[path][name]__[local]" : "[hash:base64:5]",
-					}
-				}
-			},
-			"sass-loader",
-		],
-	}
+	const scssLoaders = buildScssLoader(isDev)
 	const typescriptLoader = {
 		test: /\.tsx?$/,
 		use: "ts-loader",
