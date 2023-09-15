@@ -13,7 +13,7 @@ export function NotFoundPage(props: PropsWithChildren<NotFoundPageProps>) {
 
 	return (
 		<div className={classNames(cls.NotFoundPage, {}, [className])}>
-			{t("Страница не d найдена")}
+			{t("Страница не найдена")}
 		</div>
 	)
 }
