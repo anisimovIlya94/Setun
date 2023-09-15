@@ -4,8 +4,8 @@ import { buildOptions } from "./types/config"
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
 // import {BundleAnalyzerPlugin} from "webpack-bundle-analyzer"
 
-export function buildPlugins({paths, isDev}: buildOptions) {
-	return [
+export function buildPlugins({ paths, isDev }: buildOptions) {
+	const plugins = [
 		new webpack.ProgressPlugin(),
 		new HtmlWebpackPlugin({
 			template: paths.html
@@ -17,7 +17,11 @@ export function buildPlugins({paths, isDev}: buildOptions) {
 		new webpack.DefinePlugin({
 			__IS_DEV__ : isDev
 		}),
-		new webpack.HotModuleReplacementPlugin(),
-		// new BundleAnalyzerPlugin()
+		
 	]
+	if (isDev) {
+		plugins.push(new webpack.HotModuleReplacementPlugin())
+		// new BundleAnalyzerPlugin()
+	}
+	return plugins
 }
