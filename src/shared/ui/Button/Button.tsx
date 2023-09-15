@@ -18,7 +18,7 @@ export function Button(props: PropsWithChildren<ButtonProps>) {
 
 	return (
 		<button
-			className={classNames(cls.Button, {}, [className, cls[theme]])}
+			className={classNames(cls.Button, {}, [className, "dd", cls[theme]])}
 			{...otherProps}
 		>
 			{children}
