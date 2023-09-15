@@ -52,7 +52,8 @@ module.exports = {
 		"@typescript-eslint/no-unused-vars": "warn",
 		"react/react-in-jsx-scope": "off",
 		"react/no-deprecated": "off",
-		"react/display-name" : "warn",
+		"react/display-name": "warn",
+		"linebreak-style": "off",
 		"i18next/no-literal-string": ["warn", { markupOnly: true, ignoreAttribute: ["to", "fallback", "data-testid"] }],
 		"no-dupe-keys": "off"
 	},
