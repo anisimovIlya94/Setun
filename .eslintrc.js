@@ -30,7 +30,8 @@ module.exports = {
 	"plugins": [
 		"@typescript-eslint",
 		"react",
-		"i18next"
+		"i18next",
+		"react-hooks"
 	],
 	"rules": {
 		"indent": [
@@ -55,7 +56,9 @@ module.exports = {
 		"react/display-name": "warn",
 		"linebreak-style": "off",
 		"i18next/no-literal-string": ["warn", { markupOnly: true, ignoreAttribute: ["to", "fallback", "data-testid"] }],
-		"no-dupe-keys": "off"
+		"no-dupe-keys": "off",
+		"react-hooks/rules-of-hooks": "error", // Проверяем правила хуков
+    	"react-hooks/exhaustive-deps": "error" // Проверяем зависимости эффекта
 	},
 	settings: {
 		react: {

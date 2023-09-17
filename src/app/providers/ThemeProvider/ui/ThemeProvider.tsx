@@ -6,13 +6,13 @@ import {
 import { LOCAL_STORAGE_THEME_KEY } from "shared/lib/consts/localStorage"
 
 interface ThemeProviderProps {
-  children: ReactNode;
+	children: ReactNode;
+	initialTheme?: Theme
 }
 
-export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-	const [theme, setTheme] = useState<Theme>(
-		(localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT
-	)
+export const ThemeProvider = ({ children, initialTheme }: ThemeProviderProps) => {
+	const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT
+	const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme)
 	const defaultProps = useMemo(() => {
 		return {
 			theme,
