@@ -15,3 +15,88 @@
     border: 1px solid #858585;
     background: none;
 }
+
+.to_animation {
+    border: 1px solid #000;
+    border-radius: 5px;
+    background: linear-gradient(180deg, rgb(183 183 183) 0%, white 40%, white 60%, rgb(183 183 183) 100%);
+    padding: 5px 50px;
+    color: #000;
+
+    // max-width: 50%;
+}
+
+.to_animation_clicked {
+    border: 1px solid #000;
+    border-radius: 5px;
+
+    // background: linear-gradient(180deg, rgb(112, 112, 112) 0%, white 50%, rgb(112, 112, 112) 100%);
+    padding: 5px 50px;
+
+    // color: rgb(0, 218, 0);
+    // font-weight: 900;
+    animation: infinite mig 4s;
+}
+
+@keyframes mig {
+    0% {
+        background: linear-gradient(180deg, rgb(183 183 183) 0%, white 40%, white 60%, rgb(183 183 183) 100%);
+        color: #000;
+    }
+
+    10% {
+        background: linear-gradient(180deg, rgb(183 183 183) 0%, white 40%, white 60%, rgb(183 183 183) 100%);
+        color: #000;
+    }
+
+    20% {
+        background: linear-gradient(180deg, rgb(183 183 183) 0%, white 40%, white 60%, rgb(183 183 183) 100%);
+        color: #000;
+    }
+
+    30% {
+        background: linear-gradient(180deg, rgb(183 183 183) 0%, white 40%, white 60%, rgb(183 183 183) 100%);
+        color: #000;
+    }
+
+    40% {
+        background: linear-gradient(180deg, rgb(183 183 183) 0%, white 40%, white 60%, rgb(183 183 183) 100%);
+        color: #000;
+    }
+
+    50% {
+        background: linear-gradient(180deg, rgb(112 112 112) 0%, white 50%, rgb(112 112 112) 100%);
+        color: green;
+        font-weight: 900;
+    }
+
+    60% {
+        background: linear-gradient(180deg, rgb(112 112 112) 0%, white 50%, rgb(112 112 112) 100%);
+        color: rgb(0 218 0);
+        font-weight: 900;
+    }
+
+    70% {
+        background: linear-gradient(180deg, rgb(112 112 112) 0%, white 50%, rgb(112 112 112) 100%);
+        color: green;
+        font-weight: 900;
+    }
+
+    80% {
+        background: linear-gradient(180deg, rgb(112 112 112) 0%, white 50%, rgb(112 112 112) 100%);
+        color: rgb(0 218 0);
+        font-weight: 900;
+    }
+
+    90% {
+        background: linear-gradient(180deg, rgb(112 112 112) 0%, white 50%, rgb(112 112 112) 100%);
+        color: green;
+        font-weight: 900;
+    }
+
+    100% {
+        background: linear-gradient(180deg, rgb(112 112 112) 0%, white 50%, rgb(112 112 112) 100%);
+        color: rgb(0 218 0);
+        font-weight: 900;
+    }
+}

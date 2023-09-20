@@ -1,0 +1,27 @@
+.ClickedComponent {
+    position: relative;
+}
+
+.cursor {
+    position: absolute;
+    animation: infinite cursoranimation 4s;
+    z-index: 3;
+    color: red;
+}
+
+@keyframes cursoranimation {
+    0% {
+        bottom: -130%;
+        right: -20%;
+    }
+
+    50% {
+        bottom: 10%;
+        right: 20%;
+    }
+
+    100% {
+        bottom: -130%;
+        right: -20%;
+    }
+}

@@ -1,0 +1,55 @@
+.ResponsibleCommandsPanel {
+    max-width: 650px;
+    background-color: #fff;
+    border: 1px solid var(--primary-color);
+    padding-bottom: 20px;
+}
+
+.commandsHeader {
+    background-color: rgb(0 0 200);
+    color: #fff;
+    padding-left: 10px;
+}
+
+.emptyButtons {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.mainButtonWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+.mainButton {
+    z-index: 1;
+}
+
+.cursor {
+    position: absolute;
+    animation: infinite cursoranimation 4s;
+    z-index: 3;
+    color: red;
+}
+
+@keyframes cursoranimation {
+    0% {
+        bottom: -50%;
+        right: 20%;
+    }
+
+    50% {
+        bottom: 10%;
+        right: 40%;
+    }
+
+    100% {
+        bottom: -50%;
+        right: 20%;
+    }
+}

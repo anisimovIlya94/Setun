@@ -5,7 +5,9 @@ import type { ButtonHTMLAttributes, PropsWithChildren } from "react"
 
 export enum ButtonTheme {
 	CLEAR = "clear",
-	OUTLINED = "outlined"
+	OUTLINED = "outlined",
+	TO_ANIMATION = "to_animation",
+	TO_ANIMATION_CLICKED = "to_animation_clicked"
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
