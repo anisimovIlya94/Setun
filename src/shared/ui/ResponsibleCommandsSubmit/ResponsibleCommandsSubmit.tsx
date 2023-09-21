@@ -10,37 +10,41 @@ import CheckIcon from "../../assets/icons/submit_icon.svg"
 interface ResponsibleCommandsSubmitProps {
     className?: string
     stationNumber?: number
-    isThird?: boolean
+	isThird?: boolean
+	isEnd?: boolean
 }
 
 export function ResponsibleCommandsSubmit(props: PropsWithChildren<ResponsibleCommandsSubmitProps>) {
-	const { className, isThird, stationNumber } = props
+	const { className, isThird, stationNumber, isEnd } = props
 
 	return (
 		<div className={classNames(cls.ResponsibleCommandsSubmit, {}, [className])}>
-			<div className={cls.header}></div>
-			<div className={cls.warning}>
-				{!isThird && stationNumber &&<p>станция №{stationNumber}</p>}
-				{!isThird &&<p className={cls.warn}>Обращаем внимание на команду!</p>}
-			</div>
-			<div className={cls.buttonsWrapper}>
-				<ClickedComponent>
-					<Button theme={ButtonTheme.TO_ANIMATION_CLICKED}>
-						<CheckIcon className={cls.icon} />
-                 Подтверждаю
-					</Button>
-				</ClickedComponent>
-				<Button theme={ButtonTheme.TO_ANIMATION}>
-					<CancelIcon className={classNames(cls.icon, {}, [cls.warn])} />
+			<div className={cls.card}>
+				<div className={cls.header}></div>
+				<div className={cls.warning}>
+					{!isThird && stationNumber &&<p>станция №{stationNumber}</p>}
+					{!isThird &&<p className={cls.warn}>Обращаем внимание на команду!</p>}
+				</div>
+				<div className={cls.buttonsWrapper}>
+					<ClickedComponent>
+						<Button theme={ButtonTheme.TO_ANIMATION_CLICKED}>
+							<CheckIcon className={cls.icon}/>
+							{isEnd ? "Завершить" : "Подтверждаю"}
+						</Button>
+					</ClickedComponent>
+					<Button theme={ButtonTheme.TO_ANIMATION}>
+						<CancelIcon className={classNames(cls.icon, {}, [cls.warn])} />
                  Отмена
-				</Button>
+					</Button>
+				</div>
+				<div className={cls.footer}>
+					{isThird
+						? <p className={cls.warn}>Обращаем внимание на ответ от станции!</p>
+						: null
+					}
+				</div>
 			</div>
-			<div className={cls.footer}>
-				{isThird
-					? <p className={cls.warn}>Обращаем внимание на ответ от станции!</p>
-					: null
-				}
-			</div>
+			
 		</div>
 	)
 }

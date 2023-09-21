@@ -1,0 +1,43 @@
+.ResponsibleCommandsCarousel {
+    max-width: calc(100vw - 40px - var(--sidebar-width));
+    font: var(--font-m);
+    display: inline-block;
+
+    // width: 100%;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+}
+
+.firstSubmit {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.ff {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapp {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.title {
+    margin: 10px auto;
+    max-width: 900px;
+    padding-bottom: 10px;
+    line-height: 40px;
+}
+
+.buttons {
+    max-width: 600px;
+    margin: 0 auto;
+}

@@ -14,20 +14,26 @@ export function ResponsibleCommandsPanel(props: PropsWithChildren<ResponsibleCom
 	const { command, className } = props
 
 	return (
-		<div className={classNames(cls.ResponsibleCommandsPanel, {}, [className])}>
-			<div className={cls.commandsHeader}>
+		<div className={classNames(cls.ResponsibleCommandsWrapper, {}, [className])}>
+			<h1 className={cls.title}>
+				В панели ответственных команд нажимаем на кнопку: {command}
+			</h1>
+			<div className={cls.ResponsibleCommandsPanel}>
+				<div className={cls.commandsHeader}>
              Задание Ответственных Команд
-			</div>
-			<div className={cls.emptyButtons}>
-				{Array(8).fill(" ").map((item, index) => {
-					return <Button key={"button" + index} theme={ButtonTheme.TO_ANIMATION}>-</Button>
-				})}
-			</div>
-			<div className={cls.mainButtonWrapper}>
-				<ClickedComponent>
-					<Button className={cls.mainButton} theme={ButtonTheme.TO_ANIMATION_CLICKED}>{command}</Button>
-				</ClickedComponent>
+				</div>
+				<div className={cls.emptyButtons}>
+					{Array(8).fill(" ").map((item, index) => {
+						return <Button key={"button" + index} theme={ButtonTheme.TO_ANIMATION}>-</Button>
+					})}
+				</div>
+				<div className={cls.mainButtonWrapper}>
+					<ClickedComponent>
+						<Button className={cls.mainButton} theme={ButtonTheme.TO_ANIMATION_CLICKED}>{command}</Button>
+					</ClickedComponent>
+				</div>
 			</div>
 		</div>
+		
 	)
 }
